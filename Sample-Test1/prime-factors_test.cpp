@@ -1,13 +1,18 @@
 #include "pch.h"
 #include "../Project5/prime-factors.cpp"
 
-TEST(TestCaseName, Of1) {
+class PrimeFixture:public testing::Test
+{
+public:
 	PrimeFactors prime_factors;
-	std::vector<int> expected = {};
+	std::vector<int> expected;
+};
+
+TEST_F(PrimeFixture, Of1) {
+	expected = {};
 	EXPECT_EQ(expected, prime_factors.of(1));
 }
-TEST(TestCaseName, Of2) {
-	PrimeFactors prime_factors;
-	std::vector<int> expected = {2};
+TEST_F(PrimeFixture, Of2) {
+	expected = {2};
 	EXPECT_EQ(expected, prime_factors.of(2));
 }
