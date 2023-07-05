@@ -7,7 +7,11 @@ class PrimeFactors
 public:
 	vector<int> of(int number)
 	{
-		vector<int> prime_numbers = {};
-		return prime_numbers;
+		vector<int> result = {};
+		if (number == 2)
+		{
+			result.push_back(2);
+		}
+		return result;
 	}
 };
